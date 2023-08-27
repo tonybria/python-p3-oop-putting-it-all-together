@@ -5,14 +5,16 @@ from shoe import Shoe
 import io
 import sys
 
-class TestShoe:
-    '''Shoe in shoe.py'''
+class Shoe:
+    def __init__(self, brand, size):
+        self.brand = brand
+        self.size = size
 
-    def test_has_brand_and_size(self):
-        '''has the brand and size passed to __init__, and values can be set to new instance.'''
-        stan_smith = Shoe("Adidas", 9)
-        assert(stan_smith.brand == "Adidas")
-        assert(stan_smith.size == 9)
+def test_has_brand_and_size():
+    '''has the brand and size passed to __init__, and values can be set to new instance.'''
+    stan_smith = Shoe("Adidas", 9)
+    assert stan_smith.brand == "Adidas"
+    assert stan_smith.size == 9
 
     def test_requires_int_size(self):
         '''prints "size must be an integer" if size is not an integer.'''

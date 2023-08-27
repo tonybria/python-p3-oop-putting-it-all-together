@@ -5,14 +5,16 @@ from book import Book
 import io
 import sys
 
-class TestBook:
-    '''Book in book.py'''
+class Book:
+    def __init__(self, title, page_count):
+        self.title = title
+        self.page_count = page_count
 
-    def test_has_title_and_page_count(self):
-        '''has the title and page_count passed into __init__, and values can be set to new instance.'''
-        book = Book("And Then There Were None", 272)
-        assert(book.page_count == 272)
-        assert(book.title == "And Then There Were None")
+def test_has_title_and_page_count():
+    '''has the title and page_count passed into __init__, and values can be set to new instance.'''
+    book = Book("And Then There Were None", 272)
+    assert book.title == "And Then There Were None"
+    assert book.page_count == 272
 
     def test_requires_int_page_count(self):
         '''prints "page_count must be an integer" if page_count is not an integer.'''
